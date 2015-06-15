@@ -6,7 +6,7 @@
     <link href='bower_components/bootstrap//dist/css/bootstrap.css' rel='stylesheet'>
     <link href='style.css' rel='stylesheet'>
   </head>
-  <body>
+  <body ng-app='mvp'>
     <!-- 9 Cols + 3 Cols -->
     <!-- NAVBAR -->
     <div class='navbar navbar-default .navbar-fixed-top'>
@@ -49,11 +49,11 @@
           <div class='row event-list well'></div>
         </div>
 
-        <div class='question-submit col-md-3 col-md-offset-1'>
-          <form>
-            <input placeholder='Name' id='name-entry'>
-            <input placeholder='Questions' id='question-entry'>
-            <button type='button' class='btn btn-primary'>
+        <div class='question-submit col-md-3 col-md-offset-1' ng-controller='SubmitController'>
+          <form novalidate>
+            <input type='text' placeholder='Name' id='name-entry'>
+            <input type='text' placeholder='Questions' id='question-entry'>
+            <button type='button' class='btn btn-primary' ng-click='submit()'>
               Submit Question!
             </button>
           </form>
