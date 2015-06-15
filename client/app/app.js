@@ -1,6 +1,7 @@
 var app = angular.module('mvp', [
   'mvp.factories',
   'mvp.submit',
+  'mvp.display',
   'ui.router'
 ])
 .config(function($urlRouterProvider, $stateProvider) {

@@ -9,12 +9,20 @@ services.factory('Questions', function($http) {
     })
   };
 
+  var getQuestions = function() {
+    return $http({
+      method:'GET',
+      url:'/messages'
+    })
+  }
+
   var hello = function() {
     return 'Test even more!'
   };
 
   return {
     addQuestion: addQuestion,
+    getQuestions: getQuestions,
     hello: hello
   }
 });
