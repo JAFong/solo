@@ -10,7 +10,7 @@ db.once('open', function (callback) {
     text: String
   });
 
-  var Question = mongoose.model('Question', questionSchema);
+  var Question = exports.Question = mongoose.model('Question', questionSchema);
 
   /*
   Example: model instantiation
