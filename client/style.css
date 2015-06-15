@@ -1,0 +1,33 @@
+.glyphicon-heart {
+  color: red;
+}
+
+.events-view {
+  height: 600px;
+}
+
+.public-events {
+  height: 100%;
+}
+
+.event-submit {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.event-list {
+  height: 600px;
+}
+
+#name-entry, #question-entry {
+  width: 100%;
+}
+
+#question-entry {
+  height: 200px;
+}
+
+footer {
+  margin-top: 15px;
+}

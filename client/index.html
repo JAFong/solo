@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>TownHall</title>
+    <!-- CSS Files -->
+    <link href='bower_components/bootstrap//dist/css/bootstrap.css' rel='stylesheet'>
+    <link href='style.css' rel='stylesheet'>
+  </head>
+  <body>
+    <!-- 9 Cols + 3 Cols -->
+    <!-- NAVBAR -->
+    <div class='navbar navbar-default .navbar-fixed-top'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <a href='/' class='navbar-brand'>TownHall</a>
+          <button type='button' class='navbar-toggle'
+          data-toggle='collapse'
+          data-target='.navbar-collapse'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+        </div>
+
+        <!-- <ul class='nav navbar-nav navbar-right navbar-collapse collapse'>
+          <li><a href='/events'>Events</a></li>
+          <li href='/chats'><a>Chats</a></li>
+          <li>
+            <a href='about.html' data-target='#' data-toggle='dropdown'>
+              Test Accordion<span class='caret'></span>
+            </a>
+            <ul class='dropdown-menu'>
+              <li><a href='/testone'>Test1</a></li>
+              <li class='divider'></li>
+              <li><a href='/testtwo'>Test2</a></li>
+            </ul>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+
+    <!-- VIEWS -->
+    <div class='container'>
+
+      <div class='row events-view'>
+
+        <div class='public-events col-md-8'>
+          <div class='row event-list well'></div>
+        </div>
+
+        <div class='question-submit col-md-3 col-md-offset-1'>
+          <form>
+            <input placeholder='Name' id='name-entry'>
+            <input placeholder='Questions' id='question-entry'>
+            <button type='button' class='btn btn-primary'>
+              Submit Question!
+            </button>
+          </form>
+        </div>
+
+      </div>  
+
+    </div>
+
+    <div class='footer'>
+      <div class='container text-center'>
+        Made with <i class='glyphicon glyphicon-heart'></i> at Hack Reactor
+      </div>
+    </div>
+  <!-- Javascript Files! -->
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+  <!-- Angular Files -->
+  <script src='bower_components/angular/angular.min.js'></script>
+  <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  </body>
