@@ -1,8 +1,9 @@
 var submit = angular.module('mvp.submit', []);
 
-submit.controller('SubmitController', function($scope) {
+submit.controller('SubmitController', function($scope, Questions) {
   $scope.submit = function() {
-    console.log("Hello World!")
-    alert("Hello World!")
+    console.log("Name: ", $scope.name)
+    console.log("Text: ", $scope.questionText)
+    Questions.addQuestion();
   }
 });

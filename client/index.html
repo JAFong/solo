@@ -51,9 +51,9 @@
 
         <div class='question-submit col-md-3 col-md-offset-1' ng-controller='SubmitController'>
           <form novalidate>
-            <input type='text' placeholder='Name' id='name-entry'>
-            <input type='text' placeholder='Questions' id='question-entry'>
-            <button type='button' class='btn btn-primary' ng-click='submit()'>
+            <input type='text' ng-model='name' placeholder='Name' id='name-entry'>
+            <input type='text' ng-model='questionText' placeholder='Questions' id='question-entry'>
+            <button type='button' class='btn btn-primary' ng-click='submit(); name=""; questionText="" '>
               Submit Question!
             </button>
           </form>
@@ -77,5 +77,6 @@
   <script src='lib/angular-ui-router/release/angular-ui-router.min.js'></script>
   <!-- Source Files -->
   <script src='app/app.js'></script>
+  <script src='app/services/factory.js'></script>
   <script src='app/questions/submit.js'></script>
   </body>
