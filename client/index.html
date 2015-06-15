@@ -46,7 +46,13 @@
       <div class='row events-view'>
 
         <div class='public-events col-md-8' ng-controller='DisplayController'>
-          <div class='row event-list well'></div>
+          <div class='row event-list well'>
+            <div ng-repeat='question in questions'>
+              {{question.name}}: 
+              {{question.text}}
+            </div>
+
+          </div>
         </div>
 
 

@@ -3,7 +3,10 @@ var router = express.Router();
 var db = require('./server.js')
 
 router.get('/', function(req, res) {
-  res.send('This is all the way from our server!');
+  db.Question.find(function(err, questions) {
+    // console.log(questions);
+    res.send(questions);
+  });
 });
 
 router.post('/', function(req, res) {
