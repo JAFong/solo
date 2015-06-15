@@ -4,8 +4,8 @@ services.factory('Questions', function($http) {
   var addQuestion = function(name, text) {
     return $http({
       method:'POST',
-      url:'/messages',
-      data: {name: name, text: text}
+      url:'/questions',
+      data: JSON.stringify({name: name, text: text})
     })
   };
 

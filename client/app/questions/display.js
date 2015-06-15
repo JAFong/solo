@@ -9,7 +9,7 @@ display.controller('DisplayController', function($scope, Questions) {
   $scope.getQuestions = function() {
     Questions.getQuestions()
     .then(function(response){
-      console.log(response);
+      console.log(response.data);
     })
   };
   
