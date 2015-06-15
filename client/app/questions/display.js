@@ -7,7 +7,10 @@ display.controller('DisplayController', function($scope, Questions) {
   };
   
   $scope.getQuestions = function() {
-    Questions.getQuestions();
+    Questions.getQuestions()
+    .then(function(response){
+      console.log(response);
+    })
   };
   
   init();

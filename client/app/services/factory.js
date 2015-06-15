@@ -12,7 +12,7 @@ services.factory('Questions', function($http) {
   var getQuestions = function() {
     return $http({
       method:'GET',
-      url:'/messages'
+      url:'/questions'
     })
   }
 
