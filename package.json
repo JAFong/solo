@@ -9,6 +9,7 @@
   "author": "Justin Fong",
   "license": "ISC",
   "dependencies": {
+    "angular-route": "^1.3.16",
     "mongodb": "^2.0.33",
     "mongoose": "^4.0.5"
   }

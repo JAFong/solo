@@ -1,20 +1,23 @@
-var app = angular.module('mvp', [
-  'mvp.submit',
-  'mvp.factories',
-  'ui.router',
-  'ngRoute'  
+var myAppModule = angular.module('mvp', [
+  'mvp.submit'  
 ]);
 
-app.config(function($urlRouterProvider. $stateProvider) {
+// var app = angular.module('mvp', [
+//   'mvp.submit',
+//   'mvp.factories',
+//   'ui.router',
+//   'ngRoute'  
+// ]).
+// config(function($urlRouterProvider. $stateProvider) {
   
-  $urlRouterProvider.otherwise('/');
+//   $urlRouterProvider.otherwise('/');
 
-  $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: '../index.html',
-      controller: 'SubmitController'
-    })
-});
+//   $stateProvider
+//     .state('home', {
+//       url: '/',
+//       templateUrl: '../index.html',
+//       controller: 'SubmitController'
+//     })
+// });
 
-app.run();
+// app.run();
