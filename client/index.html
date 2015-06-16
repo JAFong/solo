@@ -81,7 +81,8 @@
             <h3>Newest Question</h3>
             <div><strong>{{newestQuestion.name}}: </strong>{{newestQuestion.text}}</div>
             <br>
-            <div ng-click='upvote(newestQuestion)'>Upvote: {{newestQuestion.upvotes}}</div>
+            <div ng-click='upvote(newestQuestion)'>Upvote! {{newestQuestion.upvotes}}</div>
+            <div ng-click='delete(newestQuestion)'>Delete!</div>
           </div>  
 
         </div>
