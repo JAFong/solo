@@ -9,11 +9,13 @@ display.controller('DisplayController', function($scope, Questions, $interval, $
   
   $scope.questions = [];
   $scope.newestQuestion = [];
+  $scope.answered = false;
+
   //For testing
-  $scope.log = function(question, param) {
-    console.log(question);
-    console.log(angular.element(param.target).text());
-  };
+  // $scope.log = function(question, param) {
+  //   console.log(question);
+  //   console.log(angular.element(param.target).text());
+  // };
 
   $scope.$on('update', function() {
     $scope.getQuestions();

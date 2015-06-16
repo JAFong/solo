@@ -50,8 +50,8 @@
         <div class='public-events col-md-8 well' ng-controller='DisplayController'>
           <h1 ng-click='log(questions)'>Questions</h1>
           <div class='row event-list'>
-            <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
-              <strong ng-dblclick='log(question)'>{{question.name}}</strong>:
+            <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question' ng-dblclick='$answered = !$answered' ng-class='$answered ? "toggleFadeOut" : "toggleFadeIn"'>
+              <strong>{{question.name}}</strong>:
               <span id='questionEdit' ng-blur ='log(question, $event); editQuestion(question, $event)' contenteditable="true" required> {{question.text}}</span>
               <span class='upvotes' ng-click='upvote(question)'>Upvote! {{question.upvotes}}</span>
               <div class='delete' ng-click='delete(question)'>Delete!</div>

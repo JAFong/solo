@@ -40,8 +40,10 @@
 }
 
 .question {
-  border-bottom: grey 1px solid;
+  border: darkgrey 4px double;
   margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 25px;
 }
 
 #submit-button {
@@ -62,10 +64,39 @@ textarea {
 
 .delete {
   position: relative;
-  left: 645px;
+  left: 625px;
   width: 45px;
 }
 
 .newDelete {
   width: 45px;
+}
+
+.toggleFadeIn {
+  animation-duration: 2s;
+  animation-name: fadeIn;
+  opacity: 1;
+}
+.toggleFadeOut {
+  animation-duration: 2s;
+  animation-name: fadeOut;
+  opacity: .3;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .3;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 1;
+  }
 }
