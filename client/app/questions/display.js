@@ -1,6 +1,6 @@
 var display = angular.module('mvp.display', []);
 
-display.controller('DisplayController', function($scope, Questions, $interval) {
+display.controller('DisplayController', function($scope, Questions, $interval, $rootScope) {
   
   var init = function() {
     $scope.getQuestions();
@@ -22,6 +22,7 @@ display.controller('DisplayController', function($scope, Questions, $interval) {
     Questions.deleteQuestion(question._id)
     .then(function(response) {
       $scope.getQuestions();
+      $rootScope.broadcast('update');
     })
   }
   
