@@ -16,6 +16,10 @@ services.factory('Questions', function($http) {
     })
   }
 
+  var upvote = function() {
+
+  };
+
   var hello = function() {
     return 'Test even more!'
   };
@@ -23,6 +27,7 @@ services.factory('Questions', function($http) {
   return {
     addQuestion: addQuestion,
     getQuestions: getQuestions,
+    upvote: upvote,
     hello: hello
   }
 });

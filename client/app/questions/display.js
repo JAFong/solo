@@ -4,9 +4,13 @@ display.controller('DisplayController', function($scope, Questions) {
   
   var init = function() {
     $scope.getQuestions();
-    setInterval($scope.getQuestions, 5000);
+    // setInterval($scope.getQuestions, 5000);
   };
   
+$scope.log = function(param) {
+  console.log(param);
+};
+
   $scope.getQuestions = function() {
     Questions.getQuestions()
     .then(function(response){

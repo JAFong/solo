@@ -7,7 +7,8 @@ db.once('open', function (callback) {
 
   var questionSchema = mongoose.Schema({
     name: String,
-    text: String
+    text: String,
+    upvotes: Number
   });
 
   var Question = exports.Question = mongoose.model('Question', questionSchema);

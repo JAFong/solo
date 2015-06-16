@@ -8,6 +8,7 @@
 
 .public-events {
   height: 100%;
+  overflow-y: scroll;
 }
 
 .event-submit {
@@ -18,6 +19,7 @@
 
 .event-list {
   height: 600px;
+  margin: 20px;
 }
 
 #name-entry, #question-entry {
@@ -30,4 +32,18 @@
 
 .footer {
   margin-top: 15px;
+}
+
+#question-entry {
+  margin: 5px 0;
+}
+
+.upvotes {
+  position: absolute;
+  right: 50px;
+}
+
+.question {
+  border-bottom: grey 1px solid;
+  margin-bottom: 30px;
 }
