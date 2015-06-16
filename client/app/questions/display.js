@@ -14,6 +14,16 @@ display.controller('DisplayController', function($scope, Questions) {
     console.log(param);
   };
 
+  $scope.$watch(
+    function() {
+      return $scope.questions
+    },
+    function() {
+      if ($scope.questions.length) {
+        $scope.getQuestions();
+      }
+  });
+
   $scope.delete = function(question) {
     Questions.deleteQuestion(question._id)
     .then(function(response) {
