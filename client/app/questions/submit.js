@@ -1,6 +1,6 @@
 var submit = angular.module('mvp.submit', []);
 
-submit.controller('SubmitController', function($scope, Questions) {
+submit.controller('SubmitController', function($scope, Questions, $rootScope) {
   $scope.name;
   $scope.questionText;
   $scope.submit = function(valid) {
@@ -12,6 +12,7 @@ submit.controller('SubmitController', function($scope, Questions) {
       .then(function() {
         $scope.name = "";
         $scope.questionText="";
+        $rootScope.$broadcast('update');
       });
     }
   }

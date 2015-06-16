@@ -1,10 +1,10 @@
 var display = angular.module('mvp.display', []);
 
-display.controller('DisplayController', function($scope, Questions) {
+display.controller('DisplayController', function($scope, Questions, $interval) {
   
   var init = function() {
     $scope.getQuestions();
-    // setInterval($scope.getQuestions, 10000);
+    $interval($scope.getQuestions, 10000);
   };
   
   $scope.questions = [];
@@ -14,14 +14,8 @@ display.controller('DisplayController', function($scope, Questions) {
     console.log(param);
   };
 
-  $scope.$watch(
-    function() {
-      return $scope.questions
-    },
-    function() {
-      if ($scope.questions.length) {
-        $scope.getQuestions();
-      }
+  $scope.$on('update', function() {
+    $scope.getQuestions();
   });
 
   $scope.delete = function(question) {
