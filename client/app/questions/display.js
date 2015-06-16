@@ -7,9 +7,13 @@ display.controller('DisplayController', function($scope, Questions) {
     // setInterval($scope.getQuestions, 5000);
   };
   
-$scope.log = function(param) {
-  console.log(param);
-};
+  $scope.log = function(param) {
+    console.log(param);
+  };
+  
+  $scope.upvote = function(question){
+    Questions.upvote(question._id);
+  };
 
   $scope.getQuestions = function() {
     Questions.getQuestions()
