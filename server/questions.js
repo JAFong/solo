@@ -14,6 +14,8 @@ router.post('/', function(req, res) {
   // console.log(db.Question);
   new db.Question({name: req.body.name, text: req.body.text, upvotes: 0})
   .save(function(err, response) {
+    res.writeHead(201);
+    res.end();
   })
 });
 

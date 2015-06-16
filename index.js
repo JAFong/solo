@@ -12,9 +12,6 @@ app.use(bodyParser.urlencoded());
 app.use('/', express.static('client'));
 app.use('/questions', questions);
 app.use('/questions/upvote', upvote);
-// app.get('/', function(req, res, next) {
-
-// });
 
 app.listen(8080, function() {
   console.log('Express started at port 8080');

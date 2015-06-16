@@ -18,7 +18,6 @@ services.factory('Questions', function($http) {
   }
 
   var upvote = function(id) {
-    console.log(id);
     return $http({
       method:'POST',
       url:'/questions/upvote',
