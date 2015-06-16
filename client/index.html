@@ -52,7 +52,7 @@
           <div class='row event-list'>
             <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
               <strong ng-dblclick='log(question)'>{{question.name}}</strong>:
-              <span id='questionEdit' ng-blur ='log(question, $event)' contenteditable="true" required> {{question.text}}</span>
+              <span id='questionEdit' ng-blur ='log(question, $event); editQuestion(question, $event)' contenteditable="true" required> {{question.text}}</span>
               <span class='upvotes' ng-click='log(question); upvote(question)'>Upvote! {{question.upvotes}}</span>
               <div class='delete' ng-click='delete(question)'>Delete!</div>
               <!-- <div ng-show='question.text'>Save Changes!</div> -->
