@@ -64,7 +64,12 @@ textarea {
   resize: none;
 }
 
-.delete{
+.delete {
   position: relative;
   left: 645px;
+  width: 45px;
+}
+
+.newDelete {
+  width: 45px;
 }
