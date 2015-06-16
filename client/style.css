@@ -3,7 +3,7 @@
 }
 
 .events-view {
-  height: 600px;
+  max-height: 600px;
 }
 
 .public-events {
@@ -18,7 +18,7 @@
 }
 
 .event-list {
-  height: 600px;
+  max-height: 464px;
   margin: 20px;
 }
 
@@ -28,10 +28,6 @@
 
 #question-entry {
   height: 200px;
-}
-
-.footer {
-  margin-top: 15px;
 }
 
 #question-entry {
@@ -49,7 +45,7 @@
 }
 
 #submit-button {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .newest-question {

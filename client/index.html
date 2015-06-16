@@ -50,7 +50,7 @@
         <div class='public-events col-md-8 well' ng-controller='DisplayController'>
           <h1>Questions</h1>
           <div class='row event-list'>
-            <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
+            <div contenteditable="true" ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
               <strong>{{question.name}}</strong>: {{question.text}}
               <span class='upvotes' ng-click='log(question); upvote(question)'>Upvote! {{question.upvotes}}</span>
               <div class='delete' ng-click='delete(question)'>Delete!</div>
