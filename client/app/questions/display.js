@@ -4,10 +4,11 @@ display.controller('DisplayController', function($scope, Questions) {
   
   var init = function() {
     $scope.getQuestions();
-    setInterval($scope.getQuestions, 10000);
+    // setInterval($scope.getQuestions, 10000);
   };
   
-
+  $scope.questions = [];
+  $scope.newestQuestion = [];
   //For testing
   $scope.log = function(param) {
     console.log(param);
@@ -27,6 +28,7 @@ display.controller('DisplayController', function($scope, Questions) {
     .then(function(response){
       console.log(response.data);
       $scope.questions = response.data;
+      $scope.newestQuestion = $scope.questions[$scope.questions.length - 1];
     })
   };
   

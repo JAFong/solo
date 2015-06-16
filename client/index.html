@@ -45,29 +45,46 @@
 
       <div class='row events-view'>
 
+    <!-- MAIN QUESTIONS -->
+
         <div class='public-events col-md-8 well' ng-controller='DisplayController'>
+          <h1>Questions</h1>
           <div class='row event-list'>
             <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
               <strong>{{question.name}}</strong>: {{question.text}}
               <span class='upvotes' ng-click='log(question); upvote(question)'>Upvote! {{question.upvotes}}</span>
+              <div class='delete'>Delete!</div>
             </div>
 
           </div>
         </div>
 
 
+
+        <div class='question-submit col-md-3 col-md-offset-1' >
+
     <!-- QUESTION SUBMITTAL -->
 
-        <div class='question-submit col-md-3 col-md-offset-1' ng-controller='SubmitController' >
-          <form ng-model='questionSubmit' name='questionSubmit' ng-submit='submit(questionSubmit.$valid)' novalidate>
-            <input type='text' ng-model='name' placeholder='Name' id='name-entry' required/>
-            <input type='text' ng-model='questionText' placeholder='Questions' id='question-entry' required/>
-            <button type='submit' class='btn btn-primary'>
-              Submit Question!
-            </button>
-          </form>
-        </div>
+          <div class='row'  ng-controller='SubmitController'>
+            <form ng-model='questionSubmit' name='questionSubmit' ng-submit='submit(questionSubmit.$valid)' novalidate>
+              <input type='text' ng-model='name' placeholder='Name' id='name-entry' required/>
+              <textarea type='text' ng-model='questionText' placeholder='Questions' id='question-entry' required></textarea>
+              <button id='submit-button' type='submit' class='btn btn-primary'>
+                Submit Question!
+              </button>
+            </form>
+          </div>
 
+    <!-- NEWEST QUESTION -->
+
+          <div class='row well newest-question' ng-controller='DisplayController'>
+            <h3>Newest Question</h3>
+            <div><strong>{{newestQuestion.name}}: </strong>{{newestQuestion.text}}</div>
+            <br>
+            <div ng-click='upvote(newestQuestion)'>Upvote: {{newestQuestion.upvotes}}</div>
+          </div>  
+
+        </div>
 
 
       </div>  

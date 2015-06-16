@@ -47,3 +47,23 @@
   border-bottom: grey 1px solid;
   margin-bottom: 30px;
 }
+
+#submit-button {
+  margin-bottom: 5px;
+}
+
+.newest-question {
+  height: 325px;
+}
+
+textarea, input {
+  border: lightgrey 1px solid;
+}
+
+textarea {
+  resize: none;
+}
+
+.delete{
+  position: relative
+}
