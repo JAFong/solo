@@ -17,6 +17,15 @@ services.factory('Questions', function($http) {
     });
   }
 
+  var editQuestion = function(id, text) {
+    return $http({
+      method:'PUT',
+      url:'/questions',
+      data: JSON.stringify({id: id, text: text}),
+      headers: {"Content-Type": "application/json"}
+    });
+  }
+
   var deleteQuestion = function(id) {
     return $http({
       method:'DELETE',
@@ -44,6 +53,7 @@ services.factory('Questions', function($http) {
     getQuestions: getQuestions,
     upvote: upvote,
     deleteQuestion: deleteQuestion,
+    editQuestion: editQuestion,
     hello: hello
   }
 });

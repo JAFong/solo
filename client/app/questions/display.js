@@ -4,26 +4,35 @@ display.controller('DisplayController', function($scope, Questions, $interval, $
   
   var init = function() {
     $scope.getQuestions();
-    $interval($scope.getQuestions, 10000);
+    // $interval($scope.getQuestions, 10000);
   };
   
   $scope.questions = [];
   $scope.newestQuestion = [];
   //For testing
-  $scope.log = function(param) {
-    console.log(param);
+  $scope.log = function(question, param) {
+    console.log(question);
+    console.log(angular.element(param.target).text());
   };
 
   $scope.$on('update', function() {
     $scope.getQuestions();
   });
 
+  $scope.editQuestion = function(question, event) {
+    Questions.editQuestion(question._id, angular.element(event.target).text())
+    .then(function(response) {
+      $scope.getQuestions();
+      $rootScope.$broadcast('update')
+    });
+  }
+
   $scope.delete = function(question) {
     Questions.deleteQuestion(question._id)
     .then(function(response) {
       $scope.getQuestions();
-      $rootScope.broadcast('update');
-    })
+      $rootScope.$broadcast('update');
+    });
   }
   
   $scope.upvote = function(question){
@@ -31,6 +40,7 @@ display.controller('DisplayController', function($scope, Questions, $interval, $
     .then(function(response) {
       console.log(response);
       $scope.getQuestions();
+      $rootScope.$broadcast('update');
     });
   };
 

@@ -16,8 +16,15 @@ router.post('/', function(req, res) {
   .save(function(err, response) {
     res.writeHead(201);
     res.end();
-  })
+  });
+});
 
+router.post('/', function(req, res) {
+  db.Question.findById(req.body.id, function(error, question) {
+    question.update({$set: {'text': req.body.text}}, function(error, response) {
+      res.end();
+    });
+  })
 
 });
 
