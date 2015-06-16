@@ -17,6 +17,21 @@ router.post('/', function(req, res) {
     res.writeHead(201);
     res.end();
   })
+
+
+});
+
+router.delete('/', function(req, res) {
+console.log(req.body)
+console.log('Got to delete request!')
+console.log(req.body.id)
+ db.Question.findById(req.body.id, function(error, question) {
+  console.log(question)
+   question.remove({'_id': req.body.id}, function(err, response) {
+     res.writeHead(200);
+     res.end();
+   });
+ })
 });
 
 module.exports = router;

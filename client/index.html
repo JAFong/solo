@@ -53,7 +53,7 @@
             <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
               <strong>{{question.name}}</strong>: {{question.text}}
               <span class='upvotes' ng-click='log(question); upvote(question)'>Upvote! {{question.upvotes}}</span>
-              <div class='delete'>Delete!</div>
+              <div class='delete' ng-click='delete(question)'>Delete!</div>
             </div>
 
           </div>

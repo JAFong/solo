@@ -13,6 +13,13 @@ display.controller('DisplayController', function($scope, Questions) {
   $scope.log = function(param) {
     console.log(param);
   };
+
+  $scope.delete = function(question) {
+    Questions.deleteQuestion(question._id)
+    .then(function(response) {
+      $scope.getQuestions();
+    })
+  }
   
   $scope.upvote = function(question){
     Questions.upvote(question._id)

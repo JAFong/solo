@@ -17,11 +17,21 @@ services.factory('Questions', function($http) {
     });
   }
 
+  var deleteQuestion = function(id) {
+    return $http({
+      method:'DELETE',
+      url:'/questions',
+      data: JSON.stringify({id: id}),
+      headers: {"Content-Type": "application/json"}
+    });
+  }
+
   var upvote = function(id) {
     return $http({
       method:'POST',
       url:'/questions/upvote',
-      data: JSON.stringify({id: id})
+      data: JSON.stringify({id: id}),
+      headers: {"Content-Type": "application/json"}
     });
   };
 
@@ -33,6 +43,7 @@ services.factory('Questions', function($http) {
     addQuestion: addQuestion,
     getQuestions: getQuestions,
     upvote: upvote,
+    deleteQuestion: deleteQuestion,
     hello: hello
   }
 });
