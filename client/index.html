@@ -53,7 +53,7 @@
             <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question'>
               <strong ng-dblclick='log(question)'>{{question.name}}</strong>:
               <span id='questionEdit' ng-blur ='log(question, $event); editQuestion(question, $event)' contenteditable="true" required> {{question.text}}</span>
-              <span class='upvotes' ng-click='log(question); upvote(question)'>Upvote! {{question.upvotes}}</span>
+              <span class='upvotes' ng-click='upvote(question)'>Upvote! {{question.upvotes}}</span>
               <div class='delete' ng-click='delete(question)'>Delete!</div>
               <!-- <div ng-show='question.text'>Save Changes!</div> -->
             </div>
@@ -81,7 +81,7 @@
 
           <div class='row well newest-question' ng-controller='DisplayController'>
             <h3>Newest Question</h3>
-            <div><strong>{{newestQuestion.name}}: </strong>{{newestQuestion.text}}</div>
+            <div><strong>{{newestQuestion.name}}: </strong><span contenteditable ng-blur ='editQuestion(newestQuestion, $event)'>{{newestQuestion.text}}</span></div>
             <br>
             <div ng-click='upvote(newestQuestion)'>Upvote! {{newestQuestion.upvotes}}</div>
             <div class='newDelete' ng-click='delete(newestQuestion)'>Delete!</div>
