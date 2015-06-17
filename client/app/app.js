@@ -2,7 +2,8 @@ var app = angular.module('mvp', [
   'mvp.factories',
   'mvp.submit',
   'mvp.display',
-  'ui.router'
+  'ui.router',
+  'FBAngular'
 ])
 .config(function($urlRouterProvider, $stateProvider) {
   $urlRouterProvider.otherwise('/');

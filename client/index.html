@@ -41,13 +41,16 @@
     </div>
 
     <!-- VIEWS -->
-    <div class='container'>
+    <div class='container' ng-controller='DisplayController'>
 
+      <button class='presenter btn btn-primary' ng-click='$presenterMode = !$presenterMode'>
+        Presenter Mode
+      </button>
       <div class='row events-view'>
 
     <!-- QUESTIONS DISPLAY -->
 
-        <div class='public-events col-md-8 well' ng-controller='DisplayController'>
+        <div class='public-events col-md-8 well disable-text-selection' fullscreen='$presenterMode'>
           <h1 ng-click='log(questions)'>Questions</h1>
           <div class='row event-list'>
             <div ng-repeat='question in questions | orderBy:"-upvotes" ' class='question' ng-dblclick='$answered = !$answered' ng-class='$answered ? "toggleFadeOut" : "toggleFadeIn"'>
@@ -104,8 +107,8 @@
   <script src='lib/bootstrap/dist/js/bootstrap.min.js'></script>
   <!-- Angular Files -->
   <script src='lib/angular/angular.min.js'></script>
-  <script src="lib/angular-route/angular-route.js"></script>
   <script src='lib/angular-ui-router/release/angular-ui-router.min.js'></script>
+  <script src='lib/angular-fullscreen/src/angular-fullscreen.js'></script>
   <!-- Source Files -->
   <script src='app/app.js'></script>
   <script src='app/services/factory.js'></script>

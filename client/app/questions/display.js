@@ -1,6 +1,6 @@
 var display = angular.module('mvp.display', []);
 
-display.controller('DisplayController', function($scope, Questions, $interval, $rootScope) {
+display.controller('DisplayController', function($scope, Questions, $interval, $rootScope, Fullscreen) {
   
   var init = function() {
     $scope.getQuestions();
@@ -10,16 +10,26 @@ display.controller('DisplayController', function($scope, Questions, $interval, $
   $scope.questions = [];
   $scope.newestQuestion = [];
   $scope.answered = false;
+  $scope.presenterMode = false;
 
   //For testing
-  // $scope.log = function(question, param) {
-  //   console.log(question);
-  //   console.log(angular.element(param.target).text());
-  // };
+  $scope.log = function(question, param) {
+    console.log(question);
+    // console.log(angular.element(param.target).text());
+  };
 
   $scope.$on('update', function() {
     $scope.getQuestions();
   });
+  
+  // $scope.goFullscreen = function () {
+  //   if (Fullscreen.isEnabled()) {
+  //     Fullscreen.cancel();
+  //   }
+  //   else {
+  //     Fullscreen.enable( document.getElementById('questionDisplay') );
+  //   }
+  // }
 
   $scope.editQuestion = function(question, event) {
     Questions.editQuestion(question._id, angular.element(event.target).text())
